@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Shafarik&display=swap" rel="stylesheet">
+    <title>Hollow Knight: Silksong Scraped Data</title>
+    <style>
+        body { 
+            font-family: "Shafarik", sans-serif; 
+            text-align: center; 
+            padding: 30px; 
+            background: url(../static/background.jpg) no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+        }
+
+        h1 { 
+            color: white;
+            font-size: 2.5em;
+            margin-bottom: 50px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .section { 
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 80px; 
+            padding: 40px 0; 
+            border-bottom: 2px solid #BE3144;
+        }
+        .text-content {
+            flex: 1;
+            text-align: left;
+            padding: 0 40px;
+            font-size: 1.2em;
+        }
+        .image-content {
+            flex-shrink: 0;
+        }
+        ul { 
+            list-style-type: none; 
+            padding: 0; 
+        }
+        li { 
+            background: none;
+            padding: 10px; 
+            margin: 5px; 
+            color: white;
+            font-size: 1.2em;
+        }
+        img {
+            max-width: 500px;
+            height: 300px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body>
+    <h1>HOLLOW KNIGHT: SILKSONG</h1>
+    <div class="container">
+        <div class="section">
+            <div class="text-content">
+                <h2>Title</h2>
+                <p>{{ data.title }}</p>
+            </div>
+            <div class="image-content">
+                <img src="../static/gamecover.jpg" alt="Game Cover">
+            </div>
+        </div>
+        
+        <div class="section">
+            <div class="text-content">
+                <h2>Platforms</h2>
+                <p>{{ data.platforms }}</p>
+            </div>
+            <div class="image-content">
+                <img src="../static/platforms.jpg" alt="silksong-image">
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="text-content">
+                <h2>Developer</h2>
+                <p>{{ data.developer }}</p>
+            </div>
+            <div class="image-content">
+                <img src="../static/developer.jpg" alt="silksong-image">
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="text-content">
+                <h2>Publisher</h2>
+                <p>{{ data.publisher }}</p>
+            </div>
+            <div class="image-content">
+                <img src="../static/publisher.jpg" alt="silksong-image">
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="text-content">
+                <h2>Key Features</h2>
+                    <ul>
+                        {% for feature in data.features %}
+                     <li>{{ feature }}</li>
+                        {% endfor %}
+                    </ul>
+
+            </div>
+            <div class="image-content">
+                <img src="../static/feature.jpg" alt="silksong-image">
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="text-content">
+                <h2>Release Date Delay</h2>
+                <p>{{ data.release_date }}</p>
+            </div>
+            <div class="image-content">
+                <img src="../static/release.png" alt="silksong-image">
+            </div>
+        </div>
+    </div>
+</body>
+</html>
